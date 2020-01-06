@@ -27,7 +27,7 @@ for mailid in $Users
 do
     LogStep $mailid
     curl --url 'smtps://smtp.gmail.com:465' --ssl-reqd \
-      --mail-from 'wb1ecb@gmail.com' --mail-rcpt $mailid \
+      --mail-from $From --mail-rcpt $mailid \
       --upload-file $mailFile --user $emailAcct
     LogStep "Sent mail to: $mailid"
 done
